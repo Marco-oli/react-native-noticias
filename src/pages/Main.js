@@ -8,7 +8,7 @@ import {
     Button,
 } from 'react-native';
 
-export default class Card extends Component {
+export default class Main extends Component {
 
     constructor(props){
         super(props);
@@ -44,7 +44,7 @@ export default class Card extends Component {
                         source={{ uri: item.image_url }}
                         style={styles.image} 
                         />
-                        <Button style={styles.button} title='Ver Mais!'></Button>
+                        <Button style={styles.button} title='Ver Mais!' onPress={() => {this.props.navigation.navigate("Details", {noticia: item} )}}></Button>
                     </View> 
                     )}
                 />
@@ -54,10 +54,11 @@ export default class Card extends Component {
     }
 }
 
+
+
 const styles = StyleSheet.create({
     containerCard: {
         flex: 1,
-        backgroundColor: '#D3D3D3',
         margin: 5,
         padding: 5,
         alignItems: 'center',

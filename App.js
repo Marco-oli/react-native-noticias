@@ -1,36 +1,13 @@
-import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  ScrollView,
-} from 'react-native';
+import React from 'react';
+import { StatusBar } from 'react-native';
 
-import Card from './card.js';
+import Routes from './src/routes';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View>
-        <Text style={styles.title}>Notícias</Text>
-      </View>
-      <ScrollView>
-        <Card />
-      </ScrollView>
-    </View>
+    <>
+      <StatusBar barStyle="light-content" backgroundColor="#7D40E7"/>
+      <Routes />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    margin: 30,
-  },
-
-  title: {
-    fontSize: 30,
-  },
-
-});
