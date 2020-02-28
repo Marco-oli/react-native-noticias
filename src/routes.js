@@ -1,36 +1,37 @@
+import React, { Component } from 'react';
 import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Main from './pages/Main';
 import Details from './pages/Details';
+import Favorites from './pages/Favorites';
 
 const Routes = createAppContainer(
-    createStackNavigator({
-        Main: {
-            screen: Main,
-            navigationOptions: {
-                title: 'Notícias',
-            }
-        },
-        Details: {
-            screen: Details,
-            navigationOptions: {
-                title: 'Descrição da Notícia'
-            }
-        },
-    }, {
-        defaultNavigationOptions: {
-            headerTitleAlign: 'center',
-            headerTintColor: '#FFF',
-            headerTitleStyle: {
-                fontWeight: 'bold',
-                fontSize: 22,
-            },
-            headerStyle: {
-                backgroundColor: '#7D40E7',
-            }
-        }
+    createBottomTabNavigator(
+    {
+        Home: Main,
+        Details: Details,
+        Favorites: Favorites,
+    },
+    {
+      defaultNavigationOptions: ({navigation}) => ({
+          tabBarIcon: ({focused, horizontal, tintColor}) => {
+              const {routeName} = navigation.state;
+              let IconComponent = Ionicons;
+              let iconName;
 
+              if(routeName === 'Home') {
+                  iconName = 'md-home'
+              } else if (routeName === 'Details') {
+                  iconName = 'md-list'
+              } else if (routeName === 'Favorites') {
+                  iconName = 'md-star'
+              }
+
+              return <IconComponent name={iconName} size={30} color={tintColor}/>
+          }
+      })
     })
 );
 

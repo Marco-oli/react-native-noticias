@@ -3,8 +3,8 @@ import {
     Text,
     View,
     StyleSheet,
-    ScrollView,
-    Image
+    Image,
+    Button,
 } from 'react-native';
 
 export default class Details extends Component {
@@ -29,26 +29,32 @@ export default class Details extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        margin: 5,
+        padding: 5,
+        justifyContent: 'space-around',
         alignItems: 'center'
     },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 15,
-        borderBottomColor: '#ccc',
         textAlign: 'center',
     },
     description: {
-        fontSize: 15,
+        fontSize: 16,
         marginBottom: 10,
         textAlign: 'center',
-        marginBottom: 50
     },
     image: {
-        width: 300, 
-        height: 200,
+        width: 300,
+        height: 130,
         alignItems: 'center',
         justifyContent: 'center',
-    }
+    
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: 300
+    },
 });

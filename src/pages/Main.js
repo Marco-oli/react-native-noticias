@@ -37,9 +37,8 @@ export default class Main extends Component {
                 <FlatList 
                     data={this.state.data}
                     renderItem={({item}) => (
-                        <View>
+                        <View style={styles.containerCard}>
                         <Text style={styles.title}>{item.title}</Text>
-                        <Text style={styles.description}>{item.description}</Text>
                         <Image 
                         source={{ uri: item.image_url }}
                         style={styles.image} 
@@ -59,32 +58,22 @@ export default class Main extends Component {
 const styles = StyleSheet.create({
     containerCard: {
         flex: 1,
-        margin: 5,
-        padding: 5,
+        margin: 3,
+        padding: 3,
         alignItems: 'center',
         justifyContent: 'space-around',
-        borderRadius: 5,
+        height: 530,
     },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 10,
-    },
-    description: {
-        fontSize: 15,
-        marginBottom: 10,
+        textAlign: 'center'
     },
     image: {
         width: 300, 
-        height: 100,
+        height: 280,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 10,
     },
-    button: {
-        marginTop:50,
-        width: 150,
-        height: 150,
-    }
-
 })
