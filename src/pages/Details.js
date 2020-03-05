@@ -4,7 +4,6 @@ import {
     View,
     StyleSheet,
     Image,
-    Button,
 } from 'react-native';
 
 export default class Details extends Component {
@@ -14,6 +13,7 @@ export default class Details extends Component {
 
         return (
             <View style={styles.container}>
+                <Text style={styles.detalhe}>Detalhes</Text>
                 <Text style={styles.title}>{noticia.title}</Text>
                 <Text style={styles.description}>{noticia.description}</Text>
                 <Image
@@ -34,6 +34,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center'
     },
+    detalhe: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: "blue"
+    },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
@@ -51,10 +56,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     
-    },
-    buttonContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        width: 300
     },
 });
