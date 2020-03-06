@@ -13,7 +13,6 @@ export default class Details extends Component {
 
         return (
             <View style={styles.container}>
-                <Text style={styles.detalhe}>Detalhes</Text>
                 <Text style={styles.title}>{noticia.title}</Text>
                 <Text style={styles.description}>{noticia.description}</Text>
                 <Image
@@ -34,27 +33,20 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center'
     },
-    detalhe: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: "blue"
-    },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginBottom: 15,
         textAlign: 'center',
+        color: "#489A12"
     },
     description: {
         fontSize: 16,
-        marginBottom: 10,
         textAlign: 'center',
     },
     image: {
         width: 300,
-        height: 130,
+        height: 150,
         alignItems: 'center',
         justifyContent: 'center',
-    
     },
 });
